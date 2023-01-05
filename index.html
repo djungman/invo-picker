@@ -1,0 +1,363 @@
+<html lang="en">
+<head>
+	<title>Invocation Picker</title>
+      <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.js"></script>
+      <script>window.ondragstart = function() {return false} // prevents dragging the image</script>
+	<style>
+		.wrapper {
+			overflow: hidden;
+		}
+		.invo-buttons {
+			width: 1152px;
+			color: white;
+			float: left;
+		}
+		.invo-button {
+			width: 144px;
+			height: 97px;
+			-webkit-touch-callout: none;
+			-webkit-user-select: none;
+			-khtml-user-select: none;
+			-moz-user-select: none;
+			-ms-user-select: none;
+			user-select: none;
+		}
+		.info-text {
+			margin-left: 25px;
+			width: 200px; 
+			color: white; 
+			overflow: hidden; 
+			float:left;
+		}
+		.fix-height {
+			height: 77px !important;
+		}
+		.btn-style {
+			width: 100px;
+			margin-top: 5px;
+		}
+	</style>
+</head>
+<body style='background: #202020;'>
+	<div id='wrapper' class='wrapper'>
+		<div id='invo-buttons' class='invo-buttons'>
+			<img src="invos/try-again off.png" id="try-again" class="invo-button"><!--
+			--><img src="invos/persistence off.png" id="persistence" class="invo-button"><!--
+			--><img src="invos/softcore off.png" id="softcore" class="invo-button"><!--
+			--><img src="invos/hardcore off.png" id="hardcore" class="invo-button"><!--
+			--><img src="invos/walk-for-it off.png" id="walk-for-it" class="invo-button"><!--
+			--><img src="invos/jog-for-it off.png" id="jog-for-it" class="invo-button"><!--
+			--><img src="invos/run-for-it off.png" id="run-for-it" class="invo-button"><!--
+			--><img src="invos/sprint-for-it off.png" id="sprint-for-it" class="invo-button"><!--
+			--><img src="invos/need-some-help off.png" id="need-some-help" class="invo-button"><!--
+			--><img src="invos/need-less-help off.png" id="need-less-help" class="invo-button"><!--
+			--><img src="invos/no-help-needed off.png" id="no-help-needed" class="invo-button"><!--
+			--><img src="invos/walk-the-path off.png" id="walk-the-path" class="invo-button"><!--
+			--><img src="invos/pathseeker off.png" id="pathseeker" class="invo-button"><!--
+			--><img src="invos/pathfinder off.png" id="pathfinder" class="invo-button"><!--
+			--><img src="invos/pathmaster off.png" id="pathmaster" class="invo-button"><!--
+			--><img src="invos/quiet-prayers off.png" id="quiet-prayers" class="invo-button"><!--
+			--><img src="invos/deadly-prayers off.png" id="deadly-prayers" class="invo-button"><!--
+			--><img src="invos/on-a-diet off.png" id="on-a-diet" class="invo-button"><!--
+			--><img src="invos/dehydration off.png" id="dehydration" class="invo-button"><!--
+			--><img src="invos/overly-draining off.png" id="overly-draining" class="invo-button"><!--
+			--><img src="invos/lively-larvae off.png" id="lively-larvae" class="invo-button kephri-invo"><!--
+			--><img src="invos/more-overlords off.png" id="more-overlords" class="invo-button kephri-invo"><!--
+			--><img src="invos/blowing-mud off.png" id="blowing-mud" class="invo-button kephri-invo"><!--
+			--><img src="invos/medic off.png" id="medic" class="invo-button kephri-invo"><!--
+			--><img src="invos/aerial-assault off.png" id="aerial-assault" class="invo-button kephri-invo"><!--
+			--><img src="invos/not-just-a-head off.png" id="not-just-a-head" class="invo-button zebak-invo"><!--
+			--><img src="invos/arterial-spray off.png" id="arterial-spray" class="invo-button zebak-invo"><!--
+			--><img src="invos/blood-thinners off.png" id="blood-thinners" class="invo-button zebak-invo"><!--
+			--><img src="invos/upset-stomach off.png" id="upset-stomach" class="invo-button zebak-invo"><!--
+			--><img src="invos/double-trouble off.png" id="double-trouble" class="invo-button akkha-invo"><!--
+			--><img src="invos/keep-back off.png" id="keep-back" class="invo-button akkha-invo"><!--
+			--><img src="invos/stay-vigilant off.png" id="stay-vigilant" class="invo-button akkha-invo"><!--
+			--><img src="invos/feeling-special off.png" id="feeling-special" class="invo-button akkha-invo"><!--
+			--><img src="invos/mind-the-gap off.png" id="mind-the-gap" class="invo-button baba-invo"><!--
+			--><img src="invos/gotta-have-faith off.png" id="gotta-have-faith" class="invo-button baba-invo"><!--
+			--><img src="invos/jungle-japes off.png" id="jungle-japes" class="invo-button baba-invo"><!--
+			--><img src="invos/shaking-things-up off.png" id="shaking-things-up" class="invo-button baba-invo"><!--
+			--><img src="invos/boulderdash off.png" id="boulderdash" class="invo-button baba-invo"><!--
+			--><img src="invos/ancient-haste off.png" id="ancient-haste" class="invo-button warden-invo"><!--
+			--><img src="invos/acceleration off.png" id="acceleration" class="invo-button warden-invo"><!--
+			--><img src="invos/penetration off.png" id="penetration" class="invo-button warden-invo fix-height"><!--
+			--><img src="invos/overclocked off.png" id="overclocked" class="invo-button warden-invo fix-height"><!--
+			--><img src="invos/overclocked-2 off.png" id="overclocked-2" class="invo-button warden-invo fix-height"><!--
+			--><img src="invos/insanity off.png" id="insanity" class="invo-button warden-invo fix-height">
+		</div>
+		<div id='info-div'>
+			<p id='invo-info' class='info-text'>
+				<span id='raid-level-display'>Current raid level: 0</span>
+			<br><button id='clear-all-btn' class='btn-style'>Clear all</button>
+			<br><button id='toggle-kephri' class='btn-style'>Kephri Invos</button>
+			<br><button id='toggle-zebak' class='btn-style'>Zebak Invos</button>
+			<br><button id='toggle-akkha' class='btn-style'>Akkha Invos</button>
+			<br><button id='toggle-baba' class='btn-style'>Ba-Ba Invos</button>
+			<br><button id='toggle-warden' class='btn-style'>Warden Invos</button>
+			</p>
+
+		</div>
+	</div>
+
+
+
+<script>
+	var invoNames = {
+		'try-again': 5,
+		'persistence': 10, 
+		'softcore': 15, 
+		'hardcore': 25, 
+		'walk-for-it': 10, 
+		'jog-for-it': 15, 
+		'run-for-it': 20, 
+		'sprint-for-it': 25,
+		'need-some-help': 15,
+		'need-less-help': 25,
+		'no-help-needed': 40,
+		'walk-the-path': 50,
+		'pathseeker': 15,
+		'pathfinder': 40,
+		'pathmaster': 50,
+		'quiet-prayers': 20,
+		'deadly-prayers': 20,
+		'on-a-diet': 15,
+		'dehydration': 30,
+		'overly-draining': 15,
+		'lively-larvae': 5,
+		'more-overlords': 15,
+		'blowing-mud': 10,
+		'medic': 15,
+		'aerial-assault': 10,
+		'not-just-a-head': 15,
+		'arterial-spray': 10,
+		'blood-thinners': 5,
+		'upset-stomach': 15,
+		'double-trouble': 20,
+		'keep-back': 10,
+		'stay-vigilant': 15,
+		'feeling-special': 20,
+		'mind-the-gap': 10,
+		'gotta-have-faith': 10,
+		'jungle-japes': 5,
+		'shaking-things-up': 10,
+		'boulderdash': 10,
+		'ancient-haste': 10,
+		'acceleration': 10,
+		'penetration': 10,
+		'overclocked': 10,
+		'overclocked-2': 10,
+		'insanity': 50
+	};
+
+	var pointTotal = 0;
+
+	$('.invo-button').on('mousedown', function(e) {
+		if(e.button !== 0 && e.button !== undefined) return;
+		var el = $(this);
+		var action = '';
+		if(el.hasClass('invoOn')) {
+			el.removeClass('invoOn');
+			el.attr('src', el.attr('src').split(' ')[0] + ' off.png');
+			pointTotal -= invoNames[el.attr('id')];
+			action = 'removed';
+		} else { 
+			el.addClass('invoOn');
+			el.attr('src', el.attr('src').split(' ')[0] + ' on.png');
+			pointTotal += invoNames[el.attr('id')];
+			action = 'added';
+		}
+
+		updateRaidLevel(pointTotal);
+		adjustLinkedInvos(el.attr('id'), action);
+	});
+
+	$('#clear-all-btn').on('mousedown', function(e) {
+		if(e.button !== 0 && e.button !== undefined) return;
+		$('.invo-button').each(function() {
+			var el = $(this);
+			if(el.hasClass('invoOn')) {
+				el.trigger('mousedown');
+			}
+		})
+	});
+
+	$('#toggle-kephri, #toggle-zebak, #toggle-akkha, #toggle-baba, #toggle-warden').on('mousedown', function(e) {
+		if(e.button !== 0 && e.button !== undefined) return;
+		bossToToggle = $(this).attr('id').split('-')[1];
+
+		// check if any of this boss's invos are off, if so turn them all on
+		var bossInvosOff = false;
+		$('.' + bossToToggle + '-invo').each(function() {
+			if(!$(this).hasClass('invoOn')) {
+				bossInvosOff = true;
+				return false; // breaks out of .each()
+			}
+		});
+		if(bossInvosOff) {
+			$('.' + bossToToggle + '-invo').each(function() {
+				if(!$(this).hasClass('invoOn')) {
+					$(this).trigger('mousedown');
+				}
+			});
+		} else {
+			$('.' + bossToToggle + '-invo').each(function() {
+				if($(this).hasClass('invoOn')) {
+					$(this).trigger('mousedown');
+				}
+			});
+		}
+	});
+
+
+	function adjustLinkedInvos(clickedInvo, action) {
+		// only 1 of each of these invo sets can be on
+		var lifeCountInvos = ['try-again', 'persistence', 'softcore', 'hardcore'];
+		var speedInvos = ['walk-for-it', 'jog-for-it', 'run-for-it', 'sprint-for-it'];
+		var helpInvos = ['need-some-help', 'need-less-help', 'no-help-needed'];
+		var pathInvos = ['pathseeker', 'pathfinder', 'pathmaster'];
+		var invosToggled = false;
+
+		if(lifeCountInvos.includes(clickedInvo)) {
+			lifeCountInvos.forEach(function(invo) {
+				if(invo != clickedInvo) {
+					invoBtn = $('#' + invo);
+					if(invoBtn.hasClass('invoOn')) {
+						invosToggled = true;
+						invoBtn.trigger('mousedown');
+					}
+				}
+			});
+			if(action == 'added') {
+				// clicking another button will have turned off the main one, have to manually turn on without retriggering this function
+				el =  $('#' + clickedInvo);
+				el.addClass('invoOn');
+				el.attr('src', el.attr('src').split(' ')[0] + ' on.png');
+				if(invosToggled) {
+					pointTotal += invoNames[el.attr('id')];
+					updateRaidLevel(pointTotal);
+				}
+			}
+			return;
+		}
+
+		if(speedInvos.includes(clickedInvo)) {
+			speedInvos.forEach(function(invo) {
+				if(invo != clickedInvo) {
+					invoBtn = $('#' + invo);
+					if(invoBtn.hasClass('invoOn')) {
+						invosToggled = true;
+						invoBtn.trigger('mousedown');
+					}
+				}
+			});
+			if(action == 'added') {
+				// clicking another button will have turned off the main one, have to manually turn on without retriggering this function
+				el =  $('#' + clickedInvo);
+				el.addClass('invoOn');
+				el.attr('src', el.attr('src').split(' ')[0] + ' on.png');
+				if(invosToggled) {
+					pointTotal += invoNames[el.attr('id')];
+					updateRaidLevel(pointTotal);
+				}
+			}
+			return;
+		}
+
+		if(helpInvos.includes(clickedInvo)) {
+			helpInvos.forEach(function(invo) {
+				if(invo != clickedInvo) {
+					invoBtn = $('#' + invo);
+					if(invoBtn.hasClass('invoOn')) {
+						invosToggled = true;
+						invoBtn.trigger('mousedown');
+					}
+				}
+			});
+			if(action == 'added') {
+				// clicking another button will have turned off the main one, have to manually turn on without retriggering this function
+				el =  $('#' + clickedInvo);
+				el.addClass('invoOn');
+				el.attr('src', el.attr('src').split(' ')[0] + ' on.png');
+				if(invosToggled) {
+					pointTotal += invoNames[el.attr('id')];
+					updateRaidLevel(pointTotal);
+				}
+			}
+			return;
+		}
+
+		if(pathInvos.includes(clickedInvo)) {
+			pathInvos.forEach(function(invo) {
+				if(invo != clickedInvo) {
+					invoBtn = $('#' + invo);
+					if(invoBtn.hasClass('invoOn')) {
+						invosToggled = true;
+						invoBtn.trigger('mousedown');
+					}
+				}
+			});
+			if(action == 'added') {
+				// clicking another button will have turned off the main one, have to manually turn on without retriggering this function
+				el =  $('#' + clickedInvo);
+				el.addClass('invoOn');
+				el.attr('src', el.attr('src').split(' ')[0] + ' on.png');
+				if(invosToggled) {
+					pointTotal += invoNames[el.attr('id')];
+					updateRaidLevel(pointTotal);
+				}
+			}
+			return;
+		}
+
+		// if dependent invo turned on, turn on anchor invos
+		if(action == 'added' && (clickedInvo == 'arterial-spray' || clickedInvo == 'blood-thinners')) {
+			if(!$('#not-just-a-head').hasClass('invoOn')) {
+				$('#not-just-a-head').trigger('mousedown');
+			}
+			return;
+		}
+		if(action == 'added' && clickedInvo == 'overclocked-2') {
+			if(!$('#overclocked').hasClass('invoOn')) {
+				$('#overclocked').trigger('mousedown');
+			}
+			return;
+		}
+		if(action == 'added' && clickedInvo == 'insanity') {
+			if(!$('#overclocked-2').hasClass('invoOn')) {
+				$('#overclocked-2').trigger('mousedown');
+			}
+			return;
+		}
+
+		// if anchor invo turned off, turn off anchor invos
+		if(action == 'removed' && clickedInvo == 'not-just-a-head') {
+			if($('#arterial-spray').hasClass('invoOn')) {
+				$('#arterial-spray').trigger('mousedown');
+			}
+			if($('#blood-thinners').hasClass('invoOn')) {
+				$('#blood-thinners').trigger('mousedown');
+			}
+		}
+		if(action == 'removed' && clickedInvo == 'overclocked') {
+			if($('#overclocked-2').hasClass('invoOn')) {
+				$('#overclocked-2').trigger('mousedown');
+			}
+			return;
+		}
+		if(action == 'removed' && clickedInvo == 'overclocked-2') {
+			if($('#insanity').hasClass('invoOn')) {
+				$('#insanity').trigger('mousedown');
+			}
+			return;
+		}
+	}
+
+	function updateRaidLevel(pointTotal) {
+		$('#raid-level-display').html('Current raid level: ' + pointTotal);
+	}
+</script>
+
+
+</body>
+</html>
