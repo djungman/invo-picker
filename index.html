@@ -5,7 +5,7 @@
       <script>window.ondragstart = function() {return false} // prevents dragging the image</script>
 	<style>
 		.wrapper {
-			overflow: hidden;
+			overflow: auto;
 		}
 		.invo-buttons {
 			width: 1152px;
@@ -24,17 +24,22 @@
 		}
 		.info-text {
 			margin-left: 25px;
-			width: 200px; 
+			width: 400px; 
 			color: white; 
 			overflow: hidden; 
 			float:left;
+			font-size: 25px;
 		}
 		.fix-height {
 			height: 77px !important;
 		}
 		.btn-style {
-			width: 100px;
+			width: 150px;
 			margin-top: 5px;
+			font-size:18px;
+		}
+		.info-div {
+			width: auto;
 		}
 	</style>
 </head>
@@ -86,7 +91,7 @@
 			--><img src="invos/overclocked-2 off.png" id="overclocked-2" class="invo-button warden-invo fix-height"><!--
 			--><img src="invos/insanity off.png" id="insanity" class="invo-button warden-invo fix-height">
 		</div>
-		<div id='info-div'>
+		<div id='info-div' class='info-div'>
 			<p id='invo-info' class='info-text'>
 				<span id='raid-level-display'>Current raid level: 0</span>
 			<br><button id='clear-all-btn' class='btn-style'>Clear all</button>
